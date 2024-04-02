@@ -1,0 +1,61 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#f186b1;
+    font-family: 'lilita_one', sans-serif; /* Utilisation de la police définie */
+}
+
+.titre-image {
+    width: 250px;
+    position: absolute;
+    top: 10%;
+    left: 49%;
+    transform: translateX(-50%);
+    /* Ajustez ces valeurs selon vos besoins pour placer l'image au milieu de la page */
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rounded-box {
+    width: 250px;
+    background-color: #fddc9a;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    font-size: 15px;
+    font-family: 'lilita_one';
+    margin: 10px;
+    border: none;
+    width: 200px;
+    background-color: #dd0aae;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-button {
+    width: 220px; /* Largeur fixe des boutons */
+    height: 45px; /* Hauteur fixe des boutons */
+}
+
+
+@font-face {
+    font-family: 'lilita_one';
+    src: url('Lilita_One/LilitaOne-Regular.ttf') format('truetype');
+}
