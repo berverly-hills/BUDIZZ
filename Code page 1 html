@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="budizz_style.css">
+</head>
+<body>
+    <img src="budizz.png" alt="Votre image" class="titre-image">
+    <div class="container">
+        <div class="centered">
+            <div class="rounded-box">
+                <button>Créer un événement</button>
+                <button>Rejoindre un événement</button>
+            </div>
+        </div>
+    </div>
+</body>
