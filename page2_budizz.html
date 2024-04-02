@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec QR code</title>
+    <style>
+        /* Styling for header */
+        header {
+            background-color: #fddc9a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-family: 'lilita_one', sans-serif;
+        }
+
+        /* Styling for QR code popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 20px;
+            z-index: 9999;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Styling for logo */
+        .logo {
+            width: 220px; /* Taille par défaut */
+            height: auto;
+        }
+
+        body {            
+            background-color: #fddc9a; /* Choisissez la couleur de fond souhaitée */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Définition de la police téléchargée */
+        @font-face {
+            font-family: 'lilita_one';
+            src: url('Lilita_One/LilitaOne-Regular.ttf') format('truetype');
+        }
+
+        /* Style pour le conteneur du QR code */
+        #qrcode {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+        }
+
+        /* Style pour le conteneur du code aléatoire */
+        #random-code {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <label for="logo"></label>
+    <img id="logo" class="logo" src="Budizz-fondblanc-removebg-preview.png" alt="Logo">
+    <h1>QR code à faire scanner par les participants</h1>
+</header>
+
+<h1 style="text-align: center;">Générateur de QR Code et de code aléatoire</h1>
+
+<!-- Conteneur pour afficher le QR code -->
+<div id="qrcode"></div>
+
+<!-- Conteneur pour afficher le code aléatoire -->
+<div id="random-code"></div>
+
+<!-- Inclure la bibliothèque QRCode.js pour générer les QR codes -->
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+<!-- Script JavaScript pour générer le code aléatoire et le QR code -->
+<script>
+    // Fonction pour générer un code aléatoire
+    function generateRandomCode() {
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var length = 8; // Longueur du code aléatoire
+        var randomCode = '';
+        for (var i = 0; i < length; i++) {
+            randomCode += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return randomCode;
+    }
+
+    // Générer un code aléatoire
+    var randomCode = generateRandomCode();
+
+    // Afficher le code aléatoire
+    document.getElementById('random-code').innerText = 'Code aléatoire : ' + randomCode;
+
+    // Générer le QR code à partir du code aléatoire
+    var qr = new QRCode(document.getElementById('qrcode'), {
+        text: randomCode, // Contenu du QR code
+        width: 200,
+        height: 200,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H // Niveau de correction d'erreur élevé
+    });
+</script>
+
+</body>
+</html>
