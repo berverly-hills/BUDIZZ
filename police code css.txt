@@ -1,0 +1,10 @@
+dans css
+@font-face {
+    font-family: 'lilita_one';
+    src: url('Lilita_One.ttf') format('truetype');
+}
+
+dans body 
+body {
+    font-family: 'MaPolice', sans-serif; /* Utilisation de la police définie */
+}
