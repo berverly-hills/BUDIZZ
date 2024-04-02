@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec QR code</title>
+</head>
+
+    <style>
+
+
+        header {
+            background-color: #fddc9a;
+            color: #5EA8FF;
+            padding: 10px; /* Réduire le padding */
+            text-align: center;
+            font-family: 'lilita_one', sans-serif;
+            margin-bottom: 10px; /* Réduire la marge inférieure */
+        }
+
+        .logo {
+            width: 300px; /* Taille par défaut */
+            height: auto;
+        }
+
+        body {            
+            background-color: #fddc9a; /* Choisissez la couleur de fond souhaitée */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Définition de la police téléchargée */
+        @font-face {
+            font-family: 'lilita_one';
+            src: url('Lilita_One/LilitaOne-Regular.ttf') format('truetype');
+        }
+
+        /* Style pour le conteneur du QR code */
+        #qrcode-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px auto; /* Ajuster la marge autour du conteneur */
+            width: 100%;
+            min-height: 100vh; /* Définir la hauteur minimale pour couvrir toute la hauteur de la page */
+            flex-direction: column; /* Aligner les éléments verticalement */
+        }
+
+        /* Style pour la boîte arrondie */
+        .rounded-box {
+            width: 250px;
+            background-color: #fddc9a;
+            border-radius: 30px; /* coins arrondis */
+            padding: 15px; 
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style pour le conteneur du QR code */
+        #qrcode {
+            width: 200px;
+            height: 200px;
+            margin: auto; /* Centrer horizontalement */
+        }
+
+        /* Style pour le conteneur du code aléatoire */
+        #random-code {
+            font-size: 60px;
+            text-align: center;
+            margin-top: 5px;
+            font-family: lilita_one, sans-serif;
+            color: #0085ff;
+        }
+
+    </style>
+
+<body>
+
+<header>
+    <img id="logo" class="logo" src="Budizz-fondblanc-removebg-preview.png" alt="Logo">
+    <h1>QR code à faire scanner aux participants :</h1>
+</header>
+
+<!-- Conteneur pour afficher le QR code -->
+<div id="qrcode-container">
+    <div class="rounded-box">
+        <div id="qrcode"></div>
+    </div>
+</div>
+
+<!-- Conteneur pour afficher le code aléatoire -->
+<div id="random-code"></div>
+
+<!-- Inclure la bibliothèque QRCode.js pour générer les QR codes -->
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+<!-- Script JavaScript pour générer le code aléatoire et le QR code -->
+<script>
+    // URL de la page de destination
+    var destinationURL = "page2.html";
+
+    // Fonction pour générer un code aléatoire et le QR code
+    function generateRandomCodeAndQR() {
+        // Générer un code aléatoire
+        var randomCode = generateRandomCode();
+
+        // Afficher le code aléatoire
+        document.getElementById('random-code').innerText = 'Code aléatoire : ' + randomCode;
+
+        // Générer le QR code avec l'URL de la page cible comme contenu
+        var qr = new QRCode(document.getElementById('qrcode'), {
+            text: destinationURL + "?code=" + randomCode,
+            width: 200,
+            height: 200,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H 
+        });
+    }
+
+    // Fonction pour générer un code aléatoire
+    function generateRandomCode() {
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var length = 8; // Longueur du code aléatoire
+        var randomCode = '';
+        for (var i = 0; i < length; i++) {
+            randomCode += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return randomCode;
+    }
+
+    // Appeler la fonction pour générer le code aléatoire et le QR code au chargement de la page
+    generateRandomCodeAndQR();
+</script>
+</body>
+</html>
