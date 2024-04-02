@@ -4,7 +4,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#f186b1
+    background-color:#f186b1;
+    font-family: 'lilita_one', sans-serif; /* Utilisation de la police définie */
 }
 
 .container {
@@ -28,8 +29,10 @@ body, html {
 }
 
 button {
+    font-family: 'lilita_one';
     margin: 10px;
     border: none;
+    width: 200px;
     background-color: #dd0aae;
     color: #fff;
     border-radius: 5px;
@@ -48,4 +51,9 @@ button {
     left: 49%;
     transform: translateX(-50%);
     /* Ajustez ces valeurs selon vos besoins pour placer l'image au milieu de la page */
+}
+
+@font-face {
+    font-family: 'lilita_one';
+    src: url('Lilita_One/LilitaOne-Regular.ttf') format('truetype');
 }
