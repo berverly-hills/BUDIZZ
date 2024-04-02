@@ -19,7 +19,7 @@
         }
 
         .logo {
-            width: 300px; /* Taille par défaut */
+            width: 250px; /* Taille par défaut */
             height: auto;
         }
 
@@ -42,14 +42,13 @@
             align-items: center;
             margin: 10px auto; /* Ajuster la marge autour du conteneur */
             width: 100%;
-            min-height: 100vh; /* Définir la hauteur minimale pour couvrir toute la hauteur de la page */
             flex-direction: column; /* Aligner les éléments verticalement */
         }
 
         /* Style pour la boîte arrondie */
         .rounded-box {
             width: 250px;
-            background-color: #fddc9a;
+            background-color: #f186b1;
             border-radius: 30px; /* coins arrondis */
             padding: 15px; 
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -64,11 +63,33 @@
 
         /* Style pour le conteneur du code aléatoire */
         #random-code {
-            font-size: 60px;
+            font-size: 30px;
             text-align: center;
-            margin-top: 5px;
-            font-family: lilita_one, sans-serif;
-            color: #0085ff;
+            font-family: 'lilita_one', sans-serif;
+            color: #ffffff;
+        }
+
+        .code_a_entrer {
+            margin-top: 50px;
+            text-align: center;
+            font-family: 'lilita_one', sans-serif;
+            color: #5EA8FF;
+        }
+
+        .rounded-box2 {
+            width: 160px;
+            background-color: #f186b1;
+            border-radius: 30px; /* coins arrondis */
+            padding: 12px; 
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .code_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto; /* Ajuster la marge autour du conteneur */
+            flex-direction: column; /* Aligner les éléments verticalement */
         }
 
     </style>
@@ -76,8 +97,8 @@
 <body>
 
 <header>
-    <img id="logo" class="logo" src="Budizz-fondblanc-removebg-preview.png" alt="Logo">
-    <h1>QR code à faire scanner aux participants :</h1>
+    <img id="logo" class="logo" src="budizz.png" alt="Logo">
+    <h2 class="code_a_entrer">QR code à faire scanner aux participants :</h3>
 </header>
 
 <!-- Conteneur pour afficher le QR code -->
@@ -88,7 +109,10 @@
 </div>
 
 <!-- Conteneur pour afficher le code aléatoire -->
-<div id="random-code"></div>
+<h2 class="code_a_entrer">Code à entrer:</h2>
+<div class="code_container">
+<div class="rounded-box2" id="random-code"></div>
+</div>
 
 <!-- Inclure la bibliothèque QRCode.js pour générer les QR codes -->
 <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
@@ -104,7 +128,7 @@
         var randomCode = generateRandomCode();
 
         // Afficher le code aléatoire
-        document.getElementById('random-code').innerText = 'Code aléatoire : ' + randomCode;
+        document.getElementById('random-code').innerText = randomCode;
 
         // Générer le QR code avec l'URL de la page cible comme contenu
         var qr = new QRCode(document.getElementById('qrcode'), {
