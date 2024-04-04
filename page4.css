@@ -1,16 +1,46 @@
+.accordeon .contenu {
+    display: none;
+    color: blue;
+}
+
+.accordeon input[type="checkbox"]:checked ~ .contenu {
+    display: block;
+}
+
 @font-face {
     font-family: 'lilita_one';
     src: url('Lilita_One/LilitaOne-Regular.ttf') format('truetype');
 }
 
 body, html {
-    font-family: 'LilitaOne';
+    font-family: 'lilita_one';
     height: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#f186b1
+    background-color:#f186b1;
+    font-family: 'lilita_one', sans-serif; /* Utilisation de la police définie */
+}
+
+.rounded-box {
+    width: 250px;
+    background-color: #fddc9a;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.submit {
+    font-family: 'lilita_one';
+    margin: 15px;
+    border: none;
+    width: 200px;
+    background-color: #dd0aae;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 0px;
 }
 
 .titre-image {
@@ -22,43 +52,14 @@ body, html {
     /* Ajustez ces valeurs selon vos besoins pour placer l'image au milieu de la page */
 }
 
-
-.avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #dd0aae;
-    background-color: white;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-}
-
-.container {
-    text-align: center;
-    position: relative;
-}
-
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.rounded-box {
+.ville{
     display: flex;
     justify-content: center; /* Centrer horizontalement les éléments */
     align-items: center;
     flex-direction: column;
-    width: 250px;
-    background-color: #fddc9a;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.rounded-box input[type="text"] {
+.ville input[type="text"] {
     font-family: 'lilita_one';
     align-items: center;
     padding: 9px;
@@ -69,28 +70,9 @@ body, html {
     color: #000000;
     background-color: #f4f4f4; /* Couleur de fond de la case */
     text-align: center;
-    margin-bottom: 20px;
   }
-
-  .rounded-box input[type="text"]::placeholder {
+  
+  .ma-ville[type="text"]::placeholder {
     font-family: 'lilita_one';
     color: #d3c2c2; /* Couleur du texte de l'placeholder */
   }
-
-.text {
-    color: #5ea8ff;
-    font-family: 'lilita_one';
-    margin-bottom: 10px;
-}
-
-.submit {
-    font-family: 'lilita_one';
-    margin: 15px;
-    border: none;
-    padding : 5px;
-    background-color: #dd0aae;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 0px;
-}
