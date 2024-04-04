@@ -3,33 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'accueil</title>
-    <link rel="stylesheet" href="page4.css" />
+    <title>Page 4</title>
+    <link rel="stylesheet" href="page4.css">
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+      
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
+        }
+      </script>
+    
 
 </head>
 <body>
-    <img src="budizz.png" alt="Votre image" class="titre-image">
-    <div class="container">
-        <div class="centered">
-            <div class="rounded-box">
-                <input class="nom" type="text" id="code" placeholder=Nom required>
-                <label class="text" for="avatar">Choisissez votre avatar :</label>
-                    <div class="avatar" id="avatar" onclick="changerAvatar()" style="background-image: url('gaufre.png');"></div>
-                      <script>
-                        var avatars = ['gaufre.png', 'avocat.png', 'banana.png', 'burger.png', 'chips.png', 'choco.png', 'cookie.png', 'cupcake.png', 'donut.png', 'frites.png', 'fromage.png', 'jus.png', 'limonade.png', 'pizza.png', 'popcorn.png','salade.png', 'sandwich.png', 'yaourt.png'];
-                        var index = 0;
-                        var avatarElement = document.getElementById('avatar');      
-                        
-                        function changerAvatar() {
-                          index = (index + 1) % avatars.length;
-                          avatarElement.style.backgroundImage = "url('" + avatars[index] + "')";
-                          
-                        }
-                      </script>
-                    </div>
-                    <button class="submit" >Valider</button>
-            </div>
-        </div>
+<form action="traitement.php" method="post">
+
+    <div class ="titre-image"><img src="Budizz-fondblanc-removebg-preview.png" alt="Votre image" class="titre-image"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1><label for="ville">Entre le nom de ta ville : </label></h1>
+    <input type="text" id="nom" name="nom" required><br>
+
+
+    <h1>Ckeck tes passions :</h1>
+
+    <div class="accordeon">
+        <input type="checkbox" id="cinema>
+        <label for="cinema">Cinéma</label>
+        <div class="contenu">
+            <input type="checkbox" id="RomCom">
+            <label for="RomCom">RomCom</label><br>
+            <input type="checkbox" id="Horreur">
+            <label for="Horreur">Horreur</label><br>
+            <input type="checkbox" id="Action">
+            <label for="Action">Action</label><br>
+            <input type="checkbox" id="Thriller">
+            <label for="Thriller">Thriller</label><br>
+            <input type="checkbox" id="Science-Fiction">
+            <label for="Science-Fiction">Science-Fiction</label><br>
+            <br>
+        </div>   
     </div>
-</body>
+
+    <div class="accordeon">
+        <br>
+        <input type="checkbox" id="lecture>
+        <label for="lecture">Lecture</label>
+        <div class="contenu">
+            <input type="checkbox" id="Fiction">
+            <label for="Fiction">Fiction</label><br>
+
+            <input type="checkbox" id="New-Romance">
+            <label for="New-Romance">New-Romance</label><br>
+
+            <input type="checkbox" id="Historique">
+            <label for="Historique">Historique</label><br>
+
+            <input type="checkbox" id="Classiques">
+            <label for="Classiques">Classiques</label><br>
+        </div>   
+    </div>
+
+
+
+
+    <div class="accordeon">
+
+    
+        <br>
+        <input type="checkbox" id="sport>
+        <label for="sport">Sport</label>
+        <div class="contenu">
+            <input type="checkbox" id="foot">
+            <label for="foot">foot</label><br>
+
+            <input type="checkbox" id="basket">
+            <label for="basket">basket</label><br>
+
+            <input type="checkbox" id="escalade">
+            <label for="escalade">escalde</label><br>
+
+            <input type="checkbox" id="musculation">
+            <label for="musculation">musculation</label><br>
+
+            <input type="checkbox" id="natation">
+            <label for="natation">natation</label><br>
+
+            <input type="checkbox" id="dance">
+            <label for="dance">dance</label><br>
+
+            <input type="checkbox" id="skate">
+            <label for="skate">skate</label><br>
+
+            <input type="checkbox" id="tennis">
+            <label for="tennis">tennis</label><br>
+
+            <input type="checkbox" id="?">
+            <label for="?">?</label><br>
+
+            <input type="checkbox" id="?">
+            <label for="?">?</label><br>
+
+            <input type="checkbox" id="?">
+            <label for="?">?</label><br>
+            <br>
+
+         
+        </div>   
+    </div>
+
+    <div class="accordeon">
+        <br>
+        <input type="checkbox" id="animaux>
+        <label for="animaux">Animaux</label>
+        <div class="contenu">
+            <input type="checkbox" id="chat">
+            <label for="chat">chat</label><br>
+
+            <input type="checkbox" id="chien">
+            <label for="chien">chien</label><br>
+
+            <input type="checkbox" id="tortue">
+            <label for="tortue">tortue</label><br>
+
+            <input type="checkbox" id="lapin">
+            <label for="lapin">lapin</label><br>
+
+            <input type="checkbox" id="lapin">
+            <label for="lapin">lapin</label><br>
+
+            <input type="checkbox" id="lapin">
+            <label for="lapin">lapin</label><br>
+
+            <input type="checkbox" id="poisons">
+            <label for="poissons">poissons</label><br>
+
+            <input type="checkbox" id="lapin">
+            <label for="lapin">lapin</label><br>
+
+
+        <br>    
+        </div>   
+    </div>
+
+    <div class="accordeon">
+        <br>
+        <input type="checkbox" id="musique>
+        <label for="musique">Musique</label>
+        <div class="contenu">
+            <input type="checkbox" id="rock">
+            <label for="rock">rock</label><br>
+
+            <input type="checkbox" id="pop us">
+            <label for="pop us">pop us</label><br>
+
+            <input type="checkbox" id="pop fr">
+            <label for="pop fr">pop fr</label><br>
+
+            <input type="checkbox" id="k-pop">
+            <label for="k-pop">k-pop</label><br>
+
+            <input type="checkbox" id="rap us">
+            <label for="rap us">rap us</label><br>
+
+            <input type="checkbox" id="jazz">
+            <label for="jazz">jazz</label><br>
+
+            <input type="checkbox" id="disco">
+            <label for="disco">disco</label><br>
+
+            <input type="checkbox" id="reggeaton">
+            <label for="reggeaton">reggeaton</label><br>
+            <br>
+        </div>   
+    </div>
+
+    <br>
+    <div class="submit">
+    <input type="submit" value="Envoyer">
+    </div>
+
+
+
+</head>
+
+<script>src="page4.js"</script>
 </html>
