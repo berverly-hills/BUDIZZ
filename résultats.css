@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'lilita_one';
+    src: url('LilitaOne-Regular.ttf') format('truetype');
+}
+
+body, html {
+    font-family: 'LilitaOne';
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#f186b1
+}
+
+.titre-image {
+    width: 250px;
+    position: absolute;
+    top: 10%;
+    left: 49%;
+    transform: translateX(-50%);
+    /* Ajustez ces valeurs selon vos besoins pour placer l'image au milieu de la page */
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rounded-box {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement les éléments */
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    background-color: #fddc9a;
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+    font-family: 'lilita_one';
+
+}
