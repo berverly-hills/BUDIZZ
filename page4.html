@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" href="avatar.css" />
+
+</head>
+<body>
+    <img src="budizz.png" alt="Votre image" class="titre-image">
+    <div class="container">
+        <div class="centered">
+            <div class="rounded-box">
+                <input class="nom" type="text" id="code" placeholder=Nom required>
+                <label class="text" for="avatar">Choisissez votre avatar :</label>
+                    <div class="avatar" id="avatar" onclick="changerAvatar()" style="background-image: url('gaufre.png');"></div>
+                      <script>
+                        var avatars = ['gaufre.png', 'avocat.png', 'banana.png', 'burger.png', 'chips.png', 'choco.png', 'cookie.png', 'cupcake.png', 'donut.png', 'frites.png', 'fromage.png', 'jus.png', 'limonade.png', 'pizza.png', 'popcorn.png','salade.png', 'sandwich.png', 'yaourt.png'];
+                        var index = 0;
+                        var avatarElement = document.getElementById('avatar');      
+                        
+                        function changerAvatar() {
+                          index = (index + 1) % avatars.length;
+                          avatarElement.style.backgroundImage = "url('" + avatars[index] + "')";
+                          
+                        }
+                      </script>
+                    </div>
+                    <button class="submit" >Valider</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
