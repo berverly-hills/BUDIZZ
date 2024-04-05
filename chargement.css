@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'lilita_one';
     src: url('LilitaOne-Regular.ttf') format('truetype');
@@ -11,27 +10,23 @@ body {
   text-align: center;
   overflow: hidden;
 }
-body h1 {
-    font-family: 'lilita_one';
+.text {
+  font-family: 'lilita_one';
   text-transform: uppercase;
-  
-  font-size: 30px;
+  font-size: 50px;
   color: #fddc9a;
-  margin: 30px 0px 0px 0px;
+  position : absolute;
+  top : 150px;
+  right : 15px;
 }
-body h2 {
-    
-  font-weight: normal;
-  font-size: 18px;
-  color: #F98DB9;
-  margin: 10px 0px 0px 0px;
-}
+
 body p {
   margin: 0 auto;
 }
 body .loader {
-     color: #dd0aae;
-    font-family: 'lilita_one';
+  color: #dd0aae;
+  font-family: 'lilita_one';
+  font-size: 20px;
   height: 100%;
   position: relative;
   margin: auto;
