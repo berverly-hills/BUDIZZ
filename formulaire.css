@@ -1,20 +1,23 @@
+@font-face {
+    font-family: 'lilita_one';
+    src: url('Lilita_One/LilitaOne-Regular.ttf') format('truetype');
+}
+
+
 .accordeon .contenu {
+    margin-left: 20px;
     display: none;
-    color: blue;
+    color: #dd0aae;
+    
 }
 
 .accordeon input[type="checkbox"]:checked ~ .contenu {
     display: block;
 }
 
-@font-face {
-    font-family: 'lilita_one';
-    src: url('Lilita_One/LilitaOne-Regular.ttf') format('truetype');
-}
 
-body, html {
+body { 
     font-family: 'lilita_one';
-    height: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -23,47 +26,35 @@ body, html {
     font-family: 'lilita_one', sans-serif; /* Utilisation de la police définie */
 }
 
-.rounded-box {
+.titre-image {
+    margin-top: 0px;
     width: 250px;
+}
+
+
+.rounded-box {
+    color: #f186b1;
+    margin-top: 20px; /* Ajustez l'espace entre l'image et la boîte arrondie */
+    margin-left: auto;
+    margin-right: auto;
+    width: 210px;
     background-color: #fddc9a;
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.submit {
-    font-family: 'lilita_one';
-    margin: 15px;
-    border: none;
-    width: 200px;
-    background-color: #dd0aae;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 0px;
-}
-
-.titre-image {
-    width: 250px;
-    position: absolute;
-    top: 10%;
-    left: 49%;
-    transform: translateX(-50%);
-    /* Ajustez ces valeurs selon vos besoins pour placer l'image au milieu de la page */
-}
-
-.ville{
+.maville{
     display: flex;
     justify-content: center; /* Centrer horizontalement les éléments */
     align-items: center;
     flex-direction: column;
 }
 
-.ville input[type="text"] {
+.maville input[type="text"] {
     font-family: 'lilita_one';
     align-items: center;
-    padding: 9px;
-    width: 200px;
+    width: 180px;
     border: 5px solid #dd0aae; /* Modifier l'épaisseur et la couleur de la bordure */
     border-radius: 5px;
     font-size: 15px;
@@ -71,8 +62,30 @@ body, html {
     background-color: #f4f4f4; /* Couleur de fond de la case */
     text-align: center;
   }
-  
-  .ma-ville[type="text"]::placeholder {
+
+  .maville input[type="text"]::placeholder {
+    font-size: 13px;
     font-family: 'lilita_one';
     color: #d3c2c2; /* Couleur du texte de l'placeholder */
   }
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    font-family: 'lilita_one';
+    border: none;
+    background-color: #dd0aae;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    
+}
+
