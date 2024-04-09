@@ -4,13 +4,36 @@
 }
 
 body, html {
-    font-family: 'LilitaOne';
+    font-family: 'Lilita_one';
     height: 100%;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color:#f186b1
+}
+
+.text{
+
+    font-family: 'Lilita_one';
+    text-transform: uppercase;
+    font-size: 40px;
+    color: #fddc9a;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealText 1.5s ease forwards;
+}
+
+/*corps de l'animation*/
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        transform: translateY(250px) scale(0.5);
+    }
+    100%{
+        font-size: 80px;
+        opacity: 1;
+        transform: translateY(-100%) scale(1);   /*position en haut et remettre à taille initiale*/ 
+    }
 }
 
 .titre-image {
@@ -19,12 +42,6 @@ body, html {
     top: 10%;
     left: 49%;
     transform: translateX(-50%);
-    /* Ajustez ces valeurs selon vos besoins pour placer l'image au milieu de la page */
-}
-
-.container {
-    text-align: center;
-    position: relative;
 }
 
 .centered {
@@ -32,21 +49,4 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.rounded-box {
-    display: flex;
-    justify-content: center; /* Centrer horizontalement les éléments */
-    align-items: center;
-    flex-direction: column;
-    width: 250px;
-    background-color: #fddc9a;
-    border-radius: 15px;
-    padding: 50px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.text {
-    font-family: 'lilita_one';
-
 }
