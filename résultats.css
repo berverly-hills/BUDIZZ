@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'lilita_one';
     src: url('LilitaOne-Regular.ttf') format('truetype');
+    <!--Pour vous, écrivez 'Lilita_One/LilitaOne-Regular.ttf' moi je l'ai direct sans le dossier-->
 }
 
 body, html {
