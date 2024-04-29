@@ -12,11 +12,22 @@
         <div class="centered">
             <div class="rounded-box">
                 <div class="rejoindre-evenement">
-                    <input type="text" id="code" placeholder="Entrez votre code" maxlength="8" required>
-                    <button id="bouton-rejoindre" class="submit" onclick="rejoindreEvenement('avatar.html')" disabled>Rejoindre l'événement</button>
+                    <input type="password" id="code" placeholder="Entrez votre code" required>
+
+                    <button id="bouton-rejoindre" class="submit">Rejoindre l'événement</button>
                   </div>
         </div>
     </div>
-    <script src="entrage-de-code.js"></script>
+
+    <script>
+        document.getElementById("bouton-rejoindre").addEventListener("click", function() {
+            var codeValeur = document.getElementById("code").value.trim(); // Obtenez la valeur saisie dans le champ de code, en supprimant les espaces vides au début et à la fin
+            if (codeValeur.toUpperCase() === "BUDIZZ") { // Vérifiez si la valeur saisie est "BUDIZZ" (ignorant la casse)
+                window.location.href = 'formulaire.html'; // Redirigez vers la page suivante si le code est correct
+            } else {
+                alert("Le code entré est incorrect. Veuillez entrer le code correct pour accéder à la prochaine page."); // Affichez un message d'erreur si le code est incorrect
+            }
+        });
+    </script>
 </body>
 </html>
