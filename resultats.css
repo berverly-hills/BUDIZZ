@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'lilita_one';
-    src: url('LilitaOne-Regular.ttf') format('truetype');
+    src: url('Lilita_one/LilitaOne-Regular.ttf') format('truetype');
 }
 
 body, html {
-    font-family: 'lilita_one';
+    font-family: 'Lilita_one';
     height: 100%;
     display: flex;
     justify-content: center;
@@ -14,9 +14,9 @@ body, html {
 
 .text{
 
-    font-family: 'lilita_one';
+    font-family: 'Lilita_one';
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 20px;
     color: #fddc9a;
     opacity: 0;
     transform: translateY(20px);
@@ -27,17 +27,17 @@ body, html {
 @keyframes revealText {
     0% {
         opacity: 0;
-        transform: translateY(250px) scale(0.5);
+        transform: translateY(150px) scale(0.5);
     }
     100%{
-        font-size: 80px;
+        font-size: 60px;
         opacity: 1;
         transform: translateY(-100%) scale(1);   /*position en haut et remettre à taille initiale*/ 
     }
 }
 
 .titre-image {
-    width: 250px;
+    width: 310px;
     position: absolute;
     top: 10%;
     left: 49%;
