@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affichage des utilisateurs par intérêts</title>
+  <!-- Ajout de la bibliothèque de graphiques Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="resultats.css"
+</head>
+<body>
+  <img src="budizz.png" alt="Votre image" class="titre-image">
+<h1>Utilisateurs partageant les mêmes intérêts</h1>
+
+<style>
+  /* Styles pour positionner le camembert */
+  #chartContainer {
+    margin-top: 1000px;
+
+    margin: 20px auto; /* Centrer horizontalement */
+    width: 10000px; /* Largeur du conteneur */
+  }
+</style>
+
+
+<!-- Ajout d'un élément canvas pour le graphique camembert -->
+<canvas id="pieChart" width="400" height="400"></canvas>
+
+<!-- Liste des utilisateurs par catégorie -->
+<div id="categoryList"></div>
+
+<script>
+fetch('users.json')
+  .then(response => response.json())
+  .then(data => {
+    const categories = {
+      'geek': ['jeux-videos2','pc','new-game'],
+      'feignant': ['forcer','non','Zzz','pas','series'],
+      'reveur': ['lire', 'scenarios', 'paysages'],
+      'fetard': ['Extraverti','dance-floor','bouteilles'],
+      'solitaire': ['Introverti','forcer','Zzz','non'],
+      'gourmand': ['buffet','manger','cuisine'],
+      'creatif': ['passion','apprendre','dessine','culture'],
+      'serieux': ['forcer', 'revises','annee','notes'],
+      'sportif' : ['sport2', 'marcher','montagne'],
+      'posees': ['Ambiverti','baigner','sable','famille'],
+      'sociable': ['Extraverti','charo','amis','proches','questions','rencontre']
+    };
+    
+    // Couleurs pour chaque catégorie
+    const categoryColors = [
+      'rgba(255, 99, 132, 0.7)',
+      'rgba(54, 162, 235, 0.7)',
+      'rgba(255, 206, 86, 0.7)',
+      'rgba(75, 192, 192, 0.7)',
+      'rgba(153, 102, 255, 0.7)',
+      'rgba(255, 159, 64, 0.7)',
+      'rgba(255, 99, 132, 0.7)',
+      'rgba(54, 162, 235, 0.7)',
+      'rgba(255, 206, 86, 0.7)',
+      'rgba(75, 192, 192, 0.7)',
+      'rgba(153, 102, 255, 0.7)'
+    ];
+
+    const usersByCategory = {};
+
+    // Initialiser les catégories
+    for (const category in categories) {
+      usersByCategory[category] = [];
+    }
+
+    // Parcourir chaque utilisateur et les placer dans la catégorie appropriée
+    data.forEach(user => {
+      for (const category in categories) {
+        const interests = Object.values(user.interets).flat(); // Récupère tous les intérêts de l'utilisateur
+        const categoryInterests = categories[category];
+        
+        // Vérifie si l'utilisateur a au moins deux intérêts de la catégorie
+        const matchedInterests = interests.filter(interest => categoryInterests.includes(interest));
+        if (matchedInterests.length >= 2) {
+          usersByCategory[category].push(user.name);
+        }
+      }
+    });
+
+    // Afficher les utilisateurs dans chaque catégorie
+    const categoryListContainer = document.getElementById('categoryList');
+    for (const category in usersByCategory) {
+      const usersList = usersByCategory[category].join(', ');
+      const categoryItem = document.createElement('div');
+      categoryItem.innerHTML = `<h2>${category}</h2><p>${usersList}</p>`;
+      categoryListContainer.appendChild(categoryItem);
+    }
+    
+    // Créer le graphique camembert avec Chart.js
+    const pieChartCanvas = document.getElementById('pieChart');
+    const pieChartContext = pieChartCanvas.getContext('2d');
+
+    const labels = Object.keys(usersByCategory);
+    const dataValues = labels.map(label => usersByCategory[label].length);
+
+    const pieChart = new Chart(pieChartContext, {
+      type: 'pie',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Utilisateurs par catégorie',
+          data: dataValues,
+          backgroundColor: categoryColors, // Utilisez les couleurs pour chaque catégorie
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: false
+      }
+    });
+  })
+  .catch(error => console.error('Une erreur est survenue lors du chargement du fichier JSON:', error));
+</script>
+
+</body>
+</html>
