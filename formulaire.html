@@ -1,223 +1,479 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 4</title>
-    <link rel="stylesheet" href="formulaire.css">
-
+    <link rel="stylesheet" href="formulaire.css" />
+    <title>Formulaire Utilisateur</title>
 </head>
 <body>
-    <form action="traitement.php" method="post">
-            <img src="budizz.png" alt="Votre image" class="titre-image">
-            <div class='center'>
-                <div class="container-ville">
-                <div class="rounded-box">
-                    <div class="maville">
-                        <input type="text" id="code" placeholder="Entrez votre ville" maxlength="8" required>   
-                    </div>
-                </div>
-                </div>
+    <img src="budizz.png" alt="Votre image" class="titre-image">
+    <form action="/submit" method="post" onsubmit="submitHandler(event)">
 
-                <!--modifs elea pour les majusucules aux réponses-->
-                
-                <div class="rounded-box">
-                    <h2>Ckeck tes intérêts :</h2>
-                    <div class="accordeon">
-                        <input type="checkbox" id="cinema">
-                        <label for="cinema">Cinéma</label>
-                        <div class="contenu">
-                            <input type="checkbox" id="RomCom">
-                            <label for="RomCom">RomCom</label><br>
-                            <input type="checkbox" id="Horreur">
-                            <label for="Horreur">Horreur</label><br>
-                            <input type="checkbox" id="Action">
-                            <label for="Action">Action</label><br>
-                            <input type="checkbox" id="Thriller">
-                            <label for="Thriller">Thriller</label><br>
-                            <input type="checkbox" id="Science-Fiction">
-                            <label for="Science-Fiction">Science-Fiction</label><br>
-                            <br>
-                        </div>   
-                    </div>
-
-                    <div class="accordeon">
-                        <br>
-                        <input type="checkbox" id="lecture">
-                        <label for="lecture">Lecture</label>
-                        <div class="contenu">
-                            <input type="checkbox" id="Fiction">
-                            <label for="Fiction">Fiction</label><br>
-
-                            <input type="checkbox" id="New-Romance">
-                            <label for="New-Romance">New-Romance</label><br>
-
-                            <input type="checkbox" id="Historique">
-                            <label for="Historique">Historique</label><br>
-
-                            <input type="checkbox" id="Classiques">
-                            <label for="Classiques">Classiques</label><br>
-
-                            <input type="checkbox" id="Policier">
-                            <label for="Policier">Policier</label><br>
-
-                        </div>   
-                    </div>
-
-                    <div class="accordeon">
-                        <br>
-                        <input type="checkbox" id="sport">
-                        <label for="sport">Sport</label>
-                        <div class="contenu">
-                            <input type="checkbox" id="foot">
-                            <label for="foot">Foot</label><br>
-
-                            <input type="checkbox" id="basket">
-                            <label for="basket">Basket</label><br>
-
-                            <input type="checkbox" id="escalade">
-                            <label for="escalade">Escalade</label><br> <!--modifs elea un peu ici-->
-
-                            <input type="checkbox" id="musculation">
-                            <label for="musculation">Muscu</label><br> <!--modifs elea un peu ici-->
-
-                            <input type="checkbox" id="natation">
-                            <label for="natation">Natation</label><br>
-
-                            <input type="checkbox" id="danse">
-                            <label for="danse">Danse</label><br> <!--modifs elea un peu ici-->
-
-                            <input type="checkbox" id="skate">
-                            <label for="skate">Skate</label><br>
-
-                            <input type="checkbox" id="tennis">
-                            <label for="tennis">Tennis</label><br>
-
-                            <input type="checkbox" id="handball">
-                            <label for="handball">Handball</label><br> <!--modifs elea-->
-
-                            <input type="checkbox" id="athlétisme">
-                            <label for="athlétisme">Athlétisme</label><br> <!--modifs elea-->
-
-                            <input type="checkbox" id="arts martiaux">
-                            <label for="arts martiaux">Arts martiaux</label><br> <!--modifs elea-->
-                            <br>
-
-                        </div>   
-                    </div>
-
-                    <div class="accordeon">
-                        <br>
-                        <input type="checkbox" id="animaux">
-                        <label for="animaux">Si tu étais un animal...</label> <!--modifs elea-->
-                        <div class="contenu">
-                            <input type="checkbox" id="chat">
-                            <label for="chat">Chat</label><br>
-
-                            <input type="checkbox" id="chien">
-                            <label for="chien">Chien</label><br>
-
-                            <input type="checkbox" id="requin">
-                            <label for="requin">Requin</label><br>
-
-                            <input type="checkbox" id="paresseux">
-                            <label for="paresseux">Paresseux</label><br>
-
-                            <input type="checkbox" id="loup">
-                            <label for="loup">Loup</label><br>
-
-                            <input type="checkbox" id="tigre">
-                            <label for="tigre">Tigre</label><br>
-
-                            <input type="checkbox" id="hippopo">
-                            <label for="hippopo">Hippopo</label><br>
-
-                            <input type="checkbox" id="panda">
-                            <label for="panda">Panda</label><br>
-
-                            <input type="checkbox" id="rat">
-                            <label for="rat">Rat</label><br>
-
-                            <br>    
-                        </div>   
-                    </div>
-
-                    <div class="accordeon">
-                        <br>
-                        <input type="checkbox" id="musique">
-                        <label for="musique">Musique</label>
-                        <div class="contenu">
-                            <input type="checkbox" id="rock">
-                            <label for="rock">Rock</label><br>
-
-                            <input type="checkbox" id="pop us">
-                            <label for="pop us">Pop us</label><br>
-
-                            <input type="checkbox" id="pop fr">
-                            <label for="pop fr">Pop fr</label><br>
-
-                            <input type="checkbox" id="k-pop">
-                            <label for="k-pop">K-pop</label><br>
-
-                            <input type="checkbox" id="rap us">
-                            <label for="rap us">Rap us</label><br>
-
-                            <input type="checkbox" id="rap fr">
-                            <label for="rap fr">Rap fr</label><br> <!--modifs elea-->
-
-                            <input type="checkbox" id="jazz">
-                            <label for="jazz">Jazz</label><br>
-
-                            <input type="checkbox" id="disco">
-                            <label for="disco">Disco</label><br>
-
-                            <input type="checkbox" id="reggaeton">
-                            <label for="reggaeton">Reggaeton</label><br> <!--modifs elea-->
-                            <br>
-                        </div>   
-                    </div>
-
-                    <!--modifs elea-->
-                    <div class="accordeon">
-                        <br>
-                        <input type="checkbox" id="hobbies">
-                        <label for="hobbies">Hobbies</label>
-                        <div class="contenu">
-                            <input type="checkbox" id="lecture">
-                            <label for="lecture">Lecture</label><br>
-
-                            <input type="checkbox" id="Chant">
-                            <label for="Chant">Chant</label><br>
-
-                            <input type="checkbox" id="sport">
-                            <label for="sport">Sport</label><br>
-
-                            <input type="checkbox" id="cuisine">
-                            <label for="cuisine">Cuisine</label><br>
-
-                            <input type="checkbox" id="F1">
-                            <label for="F1">F1</label><br>
-
-                            <input type="checkbox" id="Instrument">
-                            <label for="Instrument">Instrument de musique</label><br>
-
-                            <input type="checkbox" id="Jeux vidéos">
-                            <label for="Jeux vidéos">Jeux vidéos</label><br>
-
-                            <input type="checkbox" id="theatre">
-                            <label for="theatre">Théâtre</label><br>
-
-                            <input type="checkbox" id="dessin">
-                            <label for="dessin">Dessin</label><br>
-
-                        
-                            <br>    
-                        </div>   
+        <div class='center'>
+            <div class="container-nom">
+            <div class="rounded-box">
+                <div class="madonnee">
+                    <label for="nom">Ton nom ?</label>
+                    <input type="text" id="nom" name="nom"placeholder="ex: Kendji " required><br>
                 </div>
             </div>
-                <div class="container">
-                    <button id="bouton-rejoindre" class="submit">Envoyer</button>
+            </div>
+        </div>
+        <div class='center'>
+            <div class="container-ville">
+            <div class="rounded-box">
+                <div class="madonnee">
+                <label for="ville">D'où viens-tu ?</label>
+                <input type="text" id="ville" name="ville" placeholder="ex: France-Montpellier" required><br>
+            </div>
+            </div>
+        </div>
+
+        <div class="rounded-box">
+            <h3>Sélectionne tes intérêts</h3>
+
+            <div class="accordeon">
+                <input type="checkbox" id="cinema">
+                <label for="cinema">Cinéma</label>
+                <div class="contenu">
+                    <input type="checkbox" id="RomCom" name="cinema" value="RomCom">
+                    <label for="RomCom">RomCom</label><br>
+                    <input type="checkbox" id="Horreur" name="cinema" value="Horreur">
+                    <label for="Horreur">Horreur</label><br>
+                    <input type="checkbox" id="Action" name="cinema" value="Action">
+                    <label for="Action">Action</label><br>
+                    <input type="checkbox" id="Thriller" name="cinema" value="Thriller">
+                    <label for="Thriller">Thriller</label><br>
+                    <input type="checkbox" id="Science-Fiction" name="cinema" value="Science-Fiction">
+                    <label for="Science-Fiction">Science-Fiction</label>
+                    <br>
                 </div>
+            </div>
+
+            <div class="accordeon">
+                <input type="checkbox" id="lecture">
+                <label for="lecture">Lecture</label>
+
+                <div class="contenu">
+                    <input type="checkbox" id="Fiction" name="lecture" value="Fiction">
+                    <label for="Fiction">Fiction</label><br>
+                    <input type="checkbox" id="New-Romance" name="lecture" value="New-Romance">
+                    <label for="New-Romance">New-Romance</label><br>
+                    <input type="checkbox" id="Historique" name="lecture" value="Historique">
+                    <label for="Historique">Historique</label><br>
+                    <input type="checkbox" id="Classiques" name="lecture" value="Classiques">
+                    <label for="Classiques">Classiques</label><br>
+                    <input type="checkbox" id="Policier" name="lecture" value="Policier">
+                    <label for="Policier">Policier</label><br>
+                </div>   
+            </div>
+
+            <div class="accordeon">
+                <input type="checkbox" id="sport">
+                <label for="sport">Sport</label>
+
+                <div class="contenu">
+                    <input type="checkbox" id="Foot" name="sport" value="Foot">
+                    <label for="Foot">Foot</label><br>
+                    <input type="checkbox" id="Basket" name="sport" value="Basket">
+                    <label for="Basket">Basket</label><br>
+                    <input type="checkbox" id="Escalade" name="sport" value="Escalade">
+                    <label for="Escalade">Escalade</label><br>
+                    <input type="checkbox" id="Musculation" name="sport" value="Musculation">
+                    <label for="Musculation">Muscu</label><br> 
+                    <input type="checkbox" id="Natation" name="sport" value="Natation">
+                    <label for="Natation">Natation</label><br>
+                    <input type="checkbox" id="Danse" name="sport" value="Danse">
+                    <label for="Danse">Danse</label><br> 
+                    <input type="checkbox" id="Skate" name="sport" value="Skate">
+                    <label for="Skate">Skate</label><br>
+                    <input type="checkbox" id="Tennis" name="sport" value="Tennis">
+                    <label for="Tennis">Tennis</label><br>
+                    <input type="checkbox" id="Handball" name="sport" value="Handball">
+                    <label for="Handball">Handball</label><br> 
+                    <input type="checkbox" id="Athlétisme" name="sport" value="Athlétisme">
+                    <label for="Athlétisme">Athlétisme</label><br> 
+                    <input type="checkbox" id="Arts-martiaux" name="sport" value="Art-martiaux">
+                    <label for="Arts-martiaux">Arts martiaux</label><br> 
+                </div>   
+            </div>
+            <div class="accordeon">
+                <input type="checkbox" id="musique">
+                <label for="musique">Musique</label>
+                <div class="contenu">
+
+                    <input type="checkbox" id="Rock" name ="musique" value="Rock">
+                    <label for="Rock">Rock</label><br>
+                    <input type="checkbox" id="Pop-us" name ="musique" value="Pop-us">
+                    <label for="Pop-us">Pop us</label><br>
+                    <input type="checkbox" id="Pop-fr" name ="musique" value="Pop-fr">
+                    <label for="Pop-fr">Pop fr</label><br>
+                    <input type="checkbox" id="K-pop" name ="musique" value="K-pop">
+                    <label for="K-pop">K-pop</label><br>
+                    <input type="checkbox" id="Rap-us" name ="musique" value="Rap-us">
+                    <label for="Rap-us">Rap us</label><br>
+                    <input type="checkbox" id="Rap-fr" name ="musique" value="Rap-fr">
+                    <label for="Rap-fr">Rap fr</label><br>
+                    <input type="checkbox" id="Jazz" name ="musique" value="Jazz">
+                    <label for="Jazz">Jazz</label><br>
+                    <input type="checkbox" id="Disco" name ="musique" value="Disco">
+                    <label for="Disco">Disco</label><br>
+                    <input type="checkbox" id="Reggaeton" name ="musique" value="Reggaeton">
+                    <label for="Reggaeton">Reggaeton</label><br>
+                    <input type="checkbox" id="r&b" name ="musique" value="r&b">
+                    <label for="r&b">R&B</label><br>
+                </div>   
+            </div>
+            <div class="accordeon">
+                <input type="checkbox" id="hobbies">
+                <label for="hobbies">Hobbies</label>
+                <div class="contenu">
+
+                    <input type="checkbox" id="Chant" name="hobbies" value="Chant">
+                    <label for="Chant">Chant</label><br>
+                    <input type="checkbox" id="Cuisine" name="hobbies" value="Cuisine">
+                    <label for="Cuisine">Cuisine</label><br>
+                    <input type="checkbox" id="F1" name="hobbies" value="F1">
+                    <label for="F1">F1</label><br>
+                    <input type="checkbox" id="Instrument" name="hobbies" value="Instrument">
+                    <label for="Instrument">Instrument de musique</label><br>
+                    <input type="checkbox" id="Jeux-videos"  name="hobbies" value="Jeux-videos">
+                    <label for="Jeux-videos">Jeux vidéos</label><br>
+                    <input type="checkbox" id="Theatre"  name="hobbies" value="Theatre">
+                    <label for="Theatre">Théâtre</label><br>
+                    <input type="checkbox" id="Dessin"  name="hobbies" value="Dessin">
+                    <label for="Dessin">Dessin</label><br> 
+                </div>   
+            </div>
+        </div>
+
+        <div class="rounded-box">
+            <h3>Quel genre de personne es-tu?</h3>
+
+            <div class="accordeon">
+                <input type="checkbox" id="caractere" name="caractere" checked disabled>
+                <label for="caractere">Tu es :</label>
+
+                <div class="contenu">
+                    <input type="checkbox" id="Introverti" name="caractere" value="Introverti">
+                    <label for="introverti">introverti</label><br>
+                    <input type="checkbox" id="Extraverti" name="caractere" value="Extraverti">
+                    <label for="extraverti">extraverti</label><br>
+                    <input type="checkbox" id="Ambiverti" name="caractere" value="Ambiverti">
+                    <label for="ambiverti">ambiverti</label><br><br>
+                </div>   
+            </div>
+
+            <div class="accordeon">
+                <input type="checkbox" checked id="soiree" name="soiree" checked disabled>
+                <label for="soiree">En soirée tu es plus :</label>
+
+                <div class="contenu">
+                    <input type="checkbox" id="dance-floor" name="soiree" value="dance-floor">
+                    <label for="dance-floor">sur le dance-floor</label><br>
+                    <input type="checkbox" id="buffet" name="soiree" value="buffet">
+                    <label for="buffet">près du buffet</label><br>
+                    <input type="checkbox" id="bouteilles" name="soiree" value="bouteilles">
+                    <label for="bouteilles">près des bouteilles</label><br>
+                    <input type="checkbox" id="dormir" name="soiree" value="dormir">
+                    <label for="dormir">en train de dormir</label><br>
+                    <input type="checkbox" id="charo" name="soiree" value="charo">
+                    <label for="charo">en opération charo</label><br>
+                    <input type="checkbox" id="forcer" name="soiree" value="forcer">
+                    <label for="forcer">forcé d'y aller</label><br>
+                    <input type="checkbox" id="non" name="soiree" value="non">
+                    <label for="non">moi, en soirée?!</label><br>
+                    <br>
+                </div>
+            </div>
+
+            <div class="accordeon">
+                <input type="checkbox" checked id="weekend" name="weekend" checked disabled>
+                <label for="weekend">Le week-end tu :</label>
+
+                <div class="contenu">
+                    <input type="checkbox" id="Zzz" name="weekend" value="Zzz">
+                    <label for="Zzz">Zzz ou regardes une série</label><br>
+                    <input type="checkbox" id="jeux-videos2" name="weekend" value="jeux-videos2">
+                    <label for="jeux-videos2">joues aux jeux-videos</label><br>
+                    <input type="checkbox" id="sport2" name="weekend" value="sport2">
+                    <label for="sport2">fais du sport</label><br>
+                    <input type="checkbox" id="revises" name="weekend" value="revises">
+                    <label for="revises">révises (force à toi)</label><br>
+                    <input type="checkbox" id="famille" name="weekend" value="famille">
+                    <label for="famille">vas voir ta famille</label><br>
+                    <input type="checkbox" id="consacres" name="weekend" value="consacres">
+                    <label for="consacres">te consacres à ta passion</label><br>
+                    <input type="checkbox" id="amis" name="weekend" value="amis">
+                    <label for="amis">sors avec tes amis</label><br>
+
+                    <br>
+                </div>
+            </div>
+
+            <div class="accordeon">
+                <input type="checkbox" checked id="vacances" name="vacances" checked disabled>
+                <label for="vacances">En vacances tu préfères :</label>
+
+                <div class="contenu">
+                    <input type="checkbox" id="baigner" name="vacances" value="baigner">
+                    <label for="baigner">te baigner et bronzer</label><br>
+                    <input type="checkbox" id="series" name="vacances" value="series">
+                    <label for="series">Zzz ou regarder des séries</label><br>
+                    <input type="checkbox" id="lire" name="vacances" value="lire">
+                    <label for="lire">lire des bouquins</label><br>
+                    <input type="checkbox" id="annee" name="vacances" value="annee">
+                    <label for="annee">préparer ta prochaine année (woah)</label><br>
+                    <input type="checkbox" id="apprendre" name="vacances" value="apprendre">
+                    <label for="apprendre">apprendre de nouvelles choses</label><br>
+                    <input type="checkbox" id="proches" name="vacances" value="proches">
+                    <label for="proches">passer ton temps avec tes proches</label><br>
+                    <input type="checkbox" id="marcher" name="vacances" value="marcher">
+                    <label for="marcher">marcher 20km par jour</label><br>
+                    <input type="checkbox" id="new-game" name="vacances" value="new-game">
+                    <label for="new-game">finir le nouveau jeu qui vient de sortir</label><br>
+                    <br>
+                </div>
+            </div>
+
+            <div class="accordeon">
+                <input type="checkbox" checked id="cours" name="cours" checked disabled>
+                <label for="cours">En cours tu :</label>
+
+                <div class="contenu">
+                    <input type="checkbox" id="notes" name="cours" value="notes">
+                    <label for="notes">écoutes a fond et prends des notes</label><br>
+                    <input type="checkbox" id="dessines" name="cours" value="dessines">
+                    <label for="dessines">dessines sur ta feuille</label><br>
+                    <input type="checkbox" id="questions" name="cours" value="questions">
+                    <label for="questions">poses 10000 questions au prof</label><br>
+                    <input type="checkbox" id="scenarios" name="cours" value="scenarios">
+                    <label for="scenarios">te fais des scénarios dans ta tête</label><br>
+                    <input type="checkbox" id="pas" name="cours" value="pas">
+                    <label for="pas">viens pas</label><br>
+                    <input type="checkbox" id="pc" name="cours" value="pc">
+                    <label for="pc">joues avec ton pote (ou pas) sur ton pc</label><br>
+                    <input type="checkbox" id="manger" name="cours" value="manger">
+                    <label for="manger">penses juste à aller manger</label><br>
+                    <br>
+                </div>
+            </div>
+
+            <div class="accordeon">
+                <input type="checkbox" checked id="voyage" name="voyage" checked disabled>
+                <label for="voyage">Pourquoi tu voyages :</label>
+
+                <div class="contenu">
+                    <input type="checkbox" id="sable" name="voyage" value="sable">
+                    <label for="sable">pour le sable chaud et la plage</label><br>
+                    <input type="checkbox" id="culture" name="voyage" value="culture">
+                    <label for="culture">les musées et la culture du pays</label><br>
+                    <input type="checkbox" id="rencontres" name="voyage" value="rencontres">
+                    <label for="rencontres">faire de nouvelles rencontres</label><br>
+                    <input type="checkbox" id="paysages" name="voyage" value="paysages">
+                    <label for="paysages">les paysages nouveaux</label><br>
+                    <input type="checkbox" id="montagne" name="voyage" value="montagne">
+                    <label for="montagne">la randonnée en montagne</label><br>
+                    <input type="checkbox" id="cuisine" name="voyage" value="cuisine">
+                    <label for="cuisine">découvrir la cuisine du pays</label><br>
+                    <br>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+            <button type="submit" class="valider" onclick="window.location.href='chargement.html'">Enregistrer</button>
+        </div>
+
     </form>
+
+    <script>
+
+        //fais en sorte que les checkbox ne soit pas decheckable
+    document.getElementById("caractere").addEventListener("click", function(event) {
+        event.preventDefault();
+        return false;
+    });
+
+    document.getElementById("soiree").addEventListener("click", function(event) {
+        event.preventDefault();
+        return false;
+    });
+
+    document.getElementById("weekend").addEventListener("click", function(event) {
+        event.preventDefault();
+        return false;
+    });
+
+    document.getElementById("vacances").addEventListener("click", function(event) {
+        event.preventDefault();
+        return false;
+    });
+
+    document.getElementById("caractere").addEventListener("click", function(event) {
+        event.preventDefault();
+        return false;
+    });
+
+    document.getElementById("cours").addEventListener("click", function(event) {
+        event.preventDefault();
+        return false;
+    });
+
+    document.getElementById("voyage").addEventListener("click", function(event) {
+        event.preventDefault();
+        return false;
+    });
+
+        function saveUserData(name, city, interets) {
+            fetch('/saveData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, city, interets })
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur lors de l\'enregistrement des données');
+                }
+                console.log('Données utilisateur enregistrées avec succès !');
+            }).catch(error => {
+                console.error('Erreur :', error.message);
+            });
+        }
+
+        function submitHandler(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire
+
+        // Récupérer les données du formulaire
+        const name = document.getElementById('nom').value;
+        const city = document.getElementById('ville').value;
+
+        // Initialiser le tableau d'intérêts
+        const interets = {
+            cinema: [],
+            lecture: [],
+            sport: [],
+            musique: [],
+            hobbies: [],
+            caractere: [],
+            soiree: [],
+            weekend: [],
+            vacances: [],
+            cours: [],
+            voyage: [],
+        };
+
+         // Mapping des ID des cases à cocher aux clés dans l'objet interets
+        const themeMapping = {
+            'RomCom': 'cinema',
+            'Horreur': 'cinema',
+            'Action': 'cinema',
+            'Thriller': 'cinema',
+            'Science-Fiction': 'cinema',
+
+            'Fiction': 'lecture',
+            'New-Romance': 'lecture',
+            'Historique': 'lecture',
+            'Classique' : 'lecture',
+            'Policier' : 'lecture', 
+
+            'Foot' : 'sport',  
+            'Basket' : 'sport', 
+            'Escalade' : 'sport', 
+            'Musculation': 'sport', 
+            'Natation' : 'sport', 
+            'Danse': 'sport', 
+            'Skate': 'sport', 
+            'Tenis' : 'sport',
+            'Handball': 'sport', 
+            'Athlétisme': 'sport', 
+            'Art-martiaux': 'sport', 
+
+            'Rock' : 'musique',
+            'Pop-us': 'musique',
+            'Pop-fr': 'musique',
+            'K-pop': 'musique',
+            'Rap-us': 'musique',
+            'Rap-fr': 'musique',
+            'Jazz': 'musique',
+            'Disco': 'musique',
+            'Reggeaton': 'musique',
+            'r&b': 'musique',
+
+            'Chant': 'hobbies',
+            'Cuisine': 'hobbies',
+            'F1': 'hobbies',
+            'Instrument': 'hobbies',
+            'Jeux-videos': 'hobbies',
+            'Theatre': 'hobbies',
+            'Dessin': 'hobbies',
+
+            'Introverti' : 'caractere',
+            'Extraverti' : 'caractere',
+            'Ambiverti': 'caractere',
+
+            'dance-floor': 'soiree',
+            'buffet': 'soiree',
+            'bouteilles': 'soiree',
+            'dormir': 'soiree',
+            'charo': 'soiree',
+            'forcer': 'soiree',
+            'non': 'soiree',
+
+            'Zzz': 'weekend',
+            'jeux-videos2': 'weekend',
+            'sport2': 'weekend',
+            'revises': 'weekend',
+            'famille': 'weekend',
+            'consacres': 'weekend',
+            'amis': 'weekend',
+
+            'baigner': 'vacances',
+            'series': 'vacances',
+            'lire': 'vacances',
+            'anne': 'vacances',
+            'apprendre': 'vacances',
+            'proches': 'vacances',
+            'marcher': 'vacances',
+            'new-game': 'vacances',
+
+            'notes': 'cours',
+            'dessines': 'cours',
+            'questions': 'cours',
+            'scenarios': 'cours',
+            'pas': 'cours',
+            'pc': 'cours',
+            'manger': 'cours',
+
+            'sable': 'voyage',
+            'culture': 'voyage',
+            'rencontres': 'voyage',
+            'paysages': 'voyage',
+            'montagne': 'voyage',
+            'cuisine': 'voyage',
+
+            // Ajoutez ici les autres ID de cases à cocher pour les autres catégories
+            // Assurez-vous que les ID correspondent exactement aux clés dans l'objet interets
+        };
+
+        // Récupérer les intérêts sélectionnés
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        checkboxes.forEach(checkbox => {
+            const themeId = checkbox.id; // Récupérer l'ID de la case à cocher
+            const theme = themeMapping[themeId]; // Utiliser l'ID pour obtenir le thème correspondant
+            const passion = checkbox.value;
+            if (theme) {
+                interets[theme].push(passion);
+            }
+        });
+
+        // Appeler la fonction pour sauvegarder les données
+        saveUserData(name, city, interets);
+    }
+
+    </script>
 </body>
 </html>
