@@ -37,28 +37,33 @@ body {
 
 .rounded-box {
     color: #f186b1;
-    margin-top: 20px; /* Ajustez l'espace entre l'image et la boîte arrondie */
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 210px;
+    width: 310px;
     background-color: #fddc9a;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
+
+.container-nom {
+    margin-top: 200px;
+}
 .container-ville {
-    margin-top: 300px;
+    margin-top: 20px;
 }
 
-.maville{
+
+.madonnee{
     display: flex;
     justify-content: center; /* Centrer horizontalement les éléments */
     align-items: center;
     flex-direction: column;
 }
 
-.maville input[type="text"] {
+.madonnee input[type="text"] {
     font-family: 'lilita_one';
     align-items: center;
     width: 190px;
@@ -69,9 +74,10 @@ body {
     color: #000000;
     background-color: #f4f4f4; /* Couleur de fond de la case */
     text-align: center;
+    margin-top: 10px;
   }
 
-  .maville input[type="text"]::placeholder {
+.madonnee input[type="text"]::placeholder {
     font-size: 13px;
     font-family: 'lilita_one';
     color: #d3c2c2; /* Couleur du texte de l'placeholder */
@@ -83,7 +89,7 @@ body {
     align-items: center;
 }
 
-.submit {
+.valider {
     font-size: 15px;
     margin-top: 15px;
     display: flex;
@@ -100,3 +106,74 @@ body {
     
 }
 
+#caractere {
+    /* Masquer la case à cocher en lui donnant une taille de zéro */
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    /* Optionnel : positionner la case à cocher en dehors de la vue */
+    position: absolute;
+    left: -9999px; /* ou utilisez d'autres valeurs pour déplacer hors de la vue */
+}
+
+#soiree {
+    /* Masquer la case à cocher en lui donnant une taille de zéro */
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    /* Optionnel : positionner la case à cocher en dehors de la vue */
+    position: absolute;
+    left: -9999px; /* ou utilisez d'autres valeurs pour déplacer hors de la vue */
+}
+
+#weekend {
+    /* Masquer la case à cocher en lui donnant une taille de zéro */
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    /* Optionnel : positionner la case à cocher en dehors de la vue */
+    position: absolute;
+    left: -9999px; /* ou utilisez d'autres valeurs pour déplacer hors de la vue */
+}
+
+#vacances {
+    /* Masquer la case à cocher en lui donnant une taille de zéro */
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    /* Optionnel : positionner la case à cocher en dehors de la vue */
+    position: absolute;
+    left: -9999px; /* ou utilisez d'autres valeurs pour déplacer hors de la vue */
+}
+
+#cours {
+    /* Masquer la case à cocher en lui donnant une taille de zéro */
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    /* Optionnel : positionner la case à cocher en dehors de la vue */
+    position: absolute;
+    left: -9999px; /* ou utilisez d'autres valeurs pour déplacer hors de la vue */
+}
+
+#voyage {
+    /* Masquer la case à cocher en lui donnant une taille de zéro */
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    /* Optionnel : positionner la case à cocher en dehors de la vue */
+    position: absolute;
+    left: -9999px; /* ou utilisez d'autres valeurs pour déplacer hors de la vue */
+}
