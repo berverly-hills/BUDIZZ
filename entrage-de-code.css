@@ -15,7 +15,7 @@ body, html {
 }
 
 .titre-image {
-    width: 250px;
+    width: 350px;
     position: absolute;
     top: 10%;
     left: 49%;
@@ -28,17 +28,18 @@ body, html {
     justify-content: center; /* Centrer horizontalement les éléments */
     align-items: center;
     flex-direction: column;
+    
 }
+.rejoindre-evenement input[type="password"] {
 
-.rejoindre-evenement input[type="text"] {
     font-family: 'lilita_one';
     align-items: center;
-    padding: 9px;
+    padding: 15px;
     width: 200px;
     border: 5px solid #dd0aae; /* Modifier l'épaisseur et la couleur de la bordure */
     border-radius: 5px;
-    font-size: 15px;
-    color: #000000;
+    font-size: 20px;
+    color: #000000; 
     background-color: #f4f4f4; /* Couleur de fond de la case */
     text-align: center;
   }
@@ -49,7 +50,7 @@ body, html {
   }
 
   .rounded-box {
-    width: 250px;
+    width: 310px;
     background-color: #fddc9a;
     border-radius: 15px;
     padding: 20px;
@@ -57,6 +58,7 @@ body, html {
 }
 
 .submit {
+    height: 30px;
     font-family: 'lilita_one';
     margin: 15px;
     border: none;
