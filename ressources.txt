@@ -1,6 +1,0 @@
-canva.com (pour les logos et avatars)
-https://www.remove.bg/fr (enlever background des logos)
-https://fonts.google.com/ (police d'écriture choisie pour le site)
-https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://graphiste.com/blog/loader-css/&ved=2ahUKEwiVoNvY_6qFAxUoUaQEHYSpAqAQFnoECBcQAQ&usg=AOvVaw2ojX5U_0Cs6zvfcKlTZ4LC (idée chargement)
-
-https://www.pierre-giraud.com/php-mysql-apprendre-coder-cours/introduction-manipulation-fichier/ (site explications php serveur mysql)
