@@ -1,0 +1,163 @@
+{
+  "users": [
+    {
+      "name": "Manal",
+      "city": "France-Montpellier",
+      "interets": {
+        "cinema": [
+          "RomCom",
+          "Horreur"
+        ],
+        "lecture": [
+          "Fiction",
+          "Historique"
+        ],
+        "sport": [],
+        "musique": [
+          "Pop-us",
+          "R&B"
+        ],
+        "hobbies": [
+          "Cuisine"
+        ],
+        "caractere": [
+          "Introverti"
+        ],
+        "soiree": [
+          "non"
+        ],
+        "weekend": [
+          "Zzz",
+          "famille",
+          "amis"
+        ],
+        "vacances": [
+          "baigner",
+          "series",
+          "lire",
+          "apprendre",
+          "proches"
+        ],
+        "cours": [
+          "dessines",
+          "scenarios",
+          "pas"
+        ],
+        "voyage": [
+          "culture",
+          "paysages"
+        ]
+      }
+    },
+    {
+      "name": "Eléa",
+      "city": "France-Lunel",
+      "interets": {
+        "cinema": [
+          "Action",
+          "Thriller"
+        ],
+        "lecture": [
+          "Fiction"
+        ],
+        "sport": [
+          "Danse",
+          "Athlétisme"
+        ],
+        "musique": [
+          "Rock",
+          "Pop-us",
+          "R&B"
+        ],
+        "hobbies": [
+          "F1",
+          "Theatre"
+        ],
+        "caractere": [
+          "Ambiverti"
+        ],
+        "soiree": [
+          "dance-floor",
+          "buffet"
+        ],
+        "weekend": [
+          "Zzz",
+          "famille",
+          "amis"
+        ],
+        "vacances": [
+          "baigner",
+          "series",
+          "lire",
+          "proches"
+        ],
+        "cours": [
+          "dessines",
+          "scenarios"
+        ],
+        "voyage": [
+          "sable",
+          "culture",
+          "paysages"
+        ]
+      }
+    },
+    {
+      "name": "Ambre",
+      "city": "France-Montpellier",
+      "interets": {
+        "cinema": [
+          "RomCom",
+          "Action",
+          "Science-Fiction"
+        ],
+        "lecture": [
+          "Fiction",
+          "New-Romance"
+        ],
+        "sport": [
+          "Danse"
+        ],
+        "musique": [
+          "Pop-us",
+          "Pop-fr",
+          "K-pop",
+          "Rap-us",
+          "Rap-fr",
+          "R&B"
+        ],
+        "hobbies": [
+          "Chant",
+          "Instrument"
+        ],
+        "caractere": [
+          "Ambiverti"
+        ],
+        "soiree": [
+          "dance-floor"
+        ],
+        "weekend": [
+          "Zzz",
+          "revises",
+          "famille",
+          "consacres",
+          "amis"
+        ],
+        "vacances": [
+          "series",
+          "lire",
+          "apprendre",
+          "proches"
+        ],
+        "cours": [
+          "notes"
+        ],
+        "voyage": [
+          "culture",
+          "rencontres",
+          "paysages"
+        ]
+      }
+    }
+  ]
+}
