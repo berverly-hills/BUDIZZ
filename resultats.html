@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affichage des utilisateurs par intérêts</title>
+<link rel="stylesheet" href="resultats.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Charger Chart.js -->
+</head>
+<body>
+  <div class="text-container">
+    <img src="resultats.png" width="1500px" alt="Votre image" class="text hidden">
+  </div>
+  <div class="global-container">
+    <div class="rounded-box1">
+      <h2 id="camembert">Camembert des types de personnes :</h2>
+      <div class="rounded-box-content1">
+        <div class="chart-container">
+          <canvas class='chart' id="chart"></canvas>
+        </div>
+        <div id="category-users-container" class="category-users-container"></div>
+      </div>
+    </div>
+    <div id="interests-container"></div>
+  </div>
+
+  <script>
+    // Fonction pour charger les données des utilisateurs depuis un fichier JSON
+    function loadUsersData(callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.overrideMimeType("application/json");
+        xhr.open('GET', 'users.json', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var usersData = JSON.parse(xhr.responseText);
+                callback(usersData);
+            }
+        };
+        xhr.send(null);
+    }
+
+    // Fonction pour générer le HTML pour chaque catégorie
+    function generateInterestsHTML(usersData) {
+        var interestsContainer = document.getElementById('interests-container');
+        var categories = {
+            'ville': 'Ville',
+            'cinema': 'Cinema',
+            'lecture': 'Lecture',
+            'sport': 'Sport',
+            'musique': 'Musique',
+            'hobbies': 'Hobbies',
+        };
+
+        for (var category in categories) {
+            var usersList = '';
+            var subcategories = {};
+
+            usersData.users.forEach(function(user) {
+                if (category === 'ville') { // Si la catégorie est "Ville"
+                    var city = user.city;
+                    if (!subcategories[city]) {
+                        subcategories[city] = [];
+                    }
+                    subcategories[city].push(user.name);
+                } else {
+                    user.interets[category].forEach(function(interest) {
+                        if (!subcategories[interest]) {
+                            subcategories[interest] = [];
+                        }
+                        subcategories[interest].push(user.name);
+                    });
+                }
+            });
+
+            if (Object.keys(subcategories).length > 0) {
+                var div = document.createElement('div');
+                div.className = 'rounded-box';
+
+                // Catégorie principale
+                var categoryDiv = document.createElement('div');
+                categoryDiv.innerHTML = '<h2>' + categories[category] + ':</h2>';
+                div.appendChild(categoryDiv);
+
+                // Création d'une div pour regrouper toutes les sous-catégories
+                var subcategoriesContainer = document.createElement('div');
+                subcategoriesContainer.className = 'rounded-box-content';
+
+                // Sous-catégories et utilisateurs
+                for (var subcategory in subcategories) {
+                    // Création d'une div pour chaque sous-catégorie
+                    var subcategoryDiv = document.createElement('div');
+                    subcategoryDiv.className = 'subcategory';
+                    subcategoryDiv.innerHTML = '<strong>' + subcategory + '</strong>:<br>' +
+                        subcategories[subcategory].join(', ');
+
+                    // Ajout de chaque sous-catégorie à la div de regroupement
+                    subcategoriesContainer.appendChild(subcategoryDiv);
+                }
+
+                // Ajout de la div de regroupement à la boîte principale
+                div.appendChild(subcategoriesContainer);
+
+                interestsContainer.appendChild(div);
+            }
+        }
+    }
+
+
+    // Fonction pour préparer les données pour le diagramme en camembert
+  function prepareChartData(usersByCategory) {
+  const categories = Object.keys(usersByCategory);
+  const userCounts = categories.map(category => usersByCategory[category].length);
+  return {
+    labels: categories,
+    datasets: [{
+      label: 'Nombre d\'utilisateurs',
+      data: userCounts,
+      backgroundColor: [
+      'rgba(255, 102, 102, 0.5)',
+      'rgba(260, 180, 102, 0.5)',
+      'rgba(255, 255, 102, 0.5)',
+      'rgba(147, 197, 114, 0.5)',
+      'rgba(137, 200, 220, 0.5)',
+      'rgba(102, 204, 255, 0.5)',
+      'rgba(153, 102, 255, 0.5)',
+      'rgba(255, 102, 255, 0.5)',
+      'rgba(255, 153, 204, 0.5)',
+      'rgba(204, 153, 255, 0.5)',
+      'rgba(255, 204, 153, 0.5)',
+      ],
+      borderWidth: 1
+    }]
+  };
+}
+
+
+ // Fonction pour dessiner le diagramme en camembert et afficher les catégories avec la liste des utilisateurs
+function drawPieChart(usersByCategory) {
+    const chartData = prepareChartData(usersByCategory);
+
+    // Ajouter les données d'utilisateurs aux datasets
+    chartData.datasets.forEach(dataset => {
+        dataset.users = usersByCategory;
+    });
+
+    const ctx = document.getElementById('chart').getContext('2d');
+    const pieChart = new Chart(ctx, {
+        type: 'pie',
+        data: chartData,
+        options: {
+            plugins: {
+                legend: {
+                    display: false // Désactiver la légende
+                }
+            },
+            onClick: function(evt, item) {
+                if (item.length > 0) {
+                    const category = item[0].label;
+                    const users = usersByCategory[category];
+                    displayCategoryUsers(category, users);
+                }
+            }
+        }
+    });
+
+    // Afficher uniquement les catégories avec leurs utilisateurs
+    for (const category in usersByCategory) {
+        const users = usersByCategory[category];
+        if (users.length > 0) {
+            displayCategoryUsers(category, users, pieChart.data.datasets[0].backgroundColor[Object.keys(usersByCategory).indexOf(category)]);
+        }
+    }
+}
+
+// Fonction pour afficher une catégorie et ses utilisateurs
+function displayCategoryUsers(category, users, color) {
+    const container = document.getElementById('category-users-container');
+    const categoryElement = document.createElement('div');
+    categoryElement.innerHTML = `<span class="color-box" style="background-color: ${color};"></span> <strong>${category}:</strong> ${users.join(', ')}`;
+    container.appendChild(categoryElement);
+}
+
+
+
+
+    // Charger les données des utilisateurs et générer le HTML des intérêts
+    loadUsersData(generateInterestsHTML);
+
+    // Charger le fichier JSON et dessiner le diagramme en camembert
+    fetch('users.json')
+      .then(response => response.json())
+      .then(data => {
+        const categories = {
+          'Geek': ['jeux-videos2','pc','new-game'],
+          'Feignant': ['forcer','non','Zzz','pas','series'],
+          'Rêveur': ['lire', 'scenarios', 'paysages'],
+          'Fêtard': ['Extraverti','dance-floor','bouteilles'],
+          'Solitaire': ['Introverti','forcer','Zzz','non'],
+          'Gourmand': ['buffet','manger','cuisine'],
+          'Créatif': ['passion','apprendre','dessine','culture'],
+          'Sérieux': ['forcer', 'revises','annee','notes'],
+          'Sportif' : ['sport2', 'marcher','montagne'],
+          'Chill': ['Ambiverti','baigner','sable','famille'],
+          'Sociable': ['Extraverti','charo','amis','proches','questions','rencontre'],
+          // Ajoutez d'autres catégories selon vos besoins
+        };
+
+        const usersByCategory = {};
+
+        // Initialiser les catégories
+        for (const category in categories) {
+          usersByCategory[category] = [];
+        }
+
+        // Parcourir chaque utilisateur et les placer dans la catégorie appropriée
+        data.users.forEach(user => {
+          for (const category in categories) {
+            const interests = Object.values(user.interets).flat(); // Récupère tous les intérêts de l'utilisateur
+            const categoryInterests = categories[category];
+            
+            // Vérifie si l'utilisateur a au moins deux intérêts de la catégorie
+            const matchedInterests = interests.filter(interest => categoryInterests.includes(interest));
+            if (matchedInterests.length >= 2) {
+              usersByCategory[category].push(user.name);
+            }
+          }
+        });
+
+        drawPieChart(usersByCategory); // Dessiner le diagramme en camembert
+      })
+      .catch(error => console.error('Une erreur est survenue lors du chargement du fichier JSON:', error));
+  </script>
+</body>
+</html>
+
