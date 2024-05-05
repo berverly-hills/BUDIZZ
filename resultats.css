@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'lilita_one';
+    src: url('Lilita_One/LilitaOne-Regular.ttf') format('truetype');
+    /*Pour vous, écrivez 'Lilita_One/LilitaOne-Regular.ttf' moi je l'ai direct sans le dossier*/
+}
+
+
+/*met le fond de toute la page en rose */
+body, html {
+    background-color:#f186b1
+}
+
+.text-container {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    margin-top: 10px; /* Ajoutez une marge en haut si nécessaire */
+}
+
+/*Animation du titre 'les resultats' */
+.text{
+    margin-top: 10px; 
+    animation: revealText 1.5s ease forwards;
+}
+
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.6);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(-0%) scale(0.5);   /*position en haut et remettre à taille initiale*/ 
+    }
+}
+
+
+.rounded-box1 {
+    font-family: 'lilita_one';
+    background-color: #dd0aae;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.rounded-box1 h2 {
+    padding-top: 15px;
+    text-align: center;
+    color: #fddc9a;
+}
+
+.rounded-box-content1 {
+    display: flex;
+    padding: 15px;
+    background-color: #fddc9a;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: rgb(92, 83, 92);
+}
+
+.category-users-container {
+    font-size: 17px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 50px;
+}
+
+/*camembert*/
+.chart {
+    padding: 10px;
+}
+
+/*Case de couleurs pour la légende */
+.color-box {
+    display: inline-block;
+    width: 30px; /* Largeur des cases de couleur */
+    height: 10px; /* Hauteur des cases de couleur */
+    margin: 5px;
+    margin-right: 5px; /* Marge entre les cases de couleur et le texte */
+    vertical-align: middle; /* Alignement vertical avec le texte */
+}
+
+/*Bandeaux roses des titres de chaque round box */
+.rounded-box {
+    flex-basis: calc(50% - 10px); /* Calcul pour occuper 50% de l'espace moins la marge */
+    height: min-content;
+    font-family: 'lilita_one';
+    background-color: #dd0aae;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+/*Les titres-memes des bandeaux roses*/
+.rounded-box h2 {
+    text-align: center;
+    color: #fddc9a;
+}
+
+/* les blocs jaunes ou il y a le contenue*/ 
+.rounded-box-content {
+    padding: 15px;
+    background-color: #fddc9a;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: rgb(95, 88, 95);
+}
+
+
+/*les bloc de sous catégories des bloc Cinema, etc, pour faire de l'espace entre eux*/
+.subcategory {
+    padding-top: 15px;
+}
+
+#interests-container {
+    margin-left: 200px;
+    margin-right: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Pour que les boîtes se répartissent uniformément */
+    align-content: flex-start; /* Pour aligner les lignes de boîtes au début du conteneur principal */
+    margin-bottom: 100px;
+}
